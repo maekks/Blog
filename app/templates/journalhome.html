@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
+
+{% block page_content %}
+  <form action={{ url_for(".journalhome") }} method="POST" class="form-inline">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ wtf.form_field(form.event) }}
+    </div>
+    <div class="form-group">
+      {{ wtf.form_field(form.costtime) }}
+    </div>
+      {{ wtf.form_field(form.submit) }}
+  </form>
+
+  <ul class="journals">
+    {% for date in dates %}
+    <a href="{{ url_for('.journal', date=date) }}" class="journal-link">
+    <li class="journal">
+      <div class="journal-content">
+        <div class="journal-body">
+            {{ date }}
+        </div>
+      </div>
+    </li>
+    </a>
+    {% endfor %}
+  </ul>
+{#
+<div class="pagination">
+  {{ macros.pagination_widget(pagination, '.index') }}
+</div>
+#}
+{% endblock %}

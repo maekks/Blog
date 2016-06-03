@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Max Saying{% endblock %}
+
+{% block page_content %}
+
+<ul class="journals">
+  <li class="journal">
+    <div class="journal-content">
+        <div class="page-header">
+            <div class="journal-date">{{ moment(blog.timestamp).format('L') }}</div>
+            <h3>{{ blog.title }}</h3>
+        </div>
+      <div class="journal-body">
+        {{ blog.body }}
+      </div>
+    </div>
+  </li>
+</ul>
+
+{% endblock %}

@@ -7,7 +7,7 @@ class Config:
     POSTS_PER_PAGE = 10
     COMMENTS_PER_PAGE = 10
     ADMIN_USERNAME = os.environ.get('ADMIN_USERNAME')
-    ADMIN_PASSWORD = os.environ.get('PASSWORD')
+    ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @staticmethod
