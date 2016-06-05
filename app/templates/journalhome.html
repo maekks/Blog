@@ -3,7 +3,7 @@
 {% import "_macros.html" as macros %}
 
 {% block page_content %}
-  <form action={{ url_for(".journalhome") }} method="POST" class="form-inline">
+  <form action={{ url_for("main.journalhome") }} method="POST" class="form-inline">
     {{ form.hidden_tag() }}
     <div class="form-group">
       {{ wtf.form_field(form.event) }}
@@ -16,7 +16,7 @@
 
   <ul class="journals">
     {% for date in dates %}
-    <a href="{{ url_for('.journal', date=date) }}" class="journal-link">
+    <a href="{{ url_for('main.journal', date=date) }}" class="journal-link">
     <li class="journal">
       <div class="journal-content">
         <div class="journal-body">

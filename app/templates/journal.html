@@ -6,7 +6,7 @@
     <div class="page-header">
         <h1>{{ date }}</h1>
     </div>
-  <form action={{ url_for('.journal', date=date) }} method="POST" class="form-inline">
+  <form action={{ url_for('main.journal', date=date) }} method="POST" class="form-inline">
     {{ form.hidden_tag() }}
     <div class="form-group">
       {{ wtf.form_field(form.event) }}

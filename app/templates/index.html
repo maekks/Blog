@@ -13,7 +13,7 @@
 </div>
 <ul class="journals">
   {% for blog in blogs %}
-  <a href="{{ url_for('.blog', id=blog.id) }}">
+  <a href="{{ url_for('main.blog', id=blog.id) }}">
   <li class="journal">
     <div class="journal-content">
       <div class="journal-date">{{ moment(blog.timestamp).fromNow() }}</div>

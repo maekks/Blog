@@ -14,15 +14,15 @@
   <div class="container-fluid">
     {% if max_logged_in %}
     <ul class="nav navbar-nav">
-      <li><a href="{{ url_for('.index') }}">Blogs</a></li>
-      <li><a href="{{ url_for('.journalhome') }}">Journals</a></li>
+      <li><a href="{{ url_for('main.index') }}">Blogs</a></li>
+      <li><a href="{{ url_for('main.journalhome') }}">Journals</a></li>
     </ul>
     {% endif %}
     <ul class="nav navbar-nav navbar-right">
       {% if max_logged_in %}
-      <li><a href="{{ url_for('.logout') }}">Logout</a></li>
+      <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
       {% else %}
-      <li><a href="{{ url_for('.login') }}">Max</a></li>
+      <li><a href="{{ url_for('main.login') }}">Max</a></li>
       {% endif %}
     </ul>
   </div>
